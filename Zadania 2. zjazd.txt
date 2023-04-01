@@ -1,0 +1,85 @@
+WIA PRACA DOMOWA 2. ZJAZD
+______________
+*Zad1.*
+
+org 100h		
+
+MOV AH, 02h		
+MOV DL, 'A'		
+INT 21h			
+
+MOV AH, 02h		 
+MOV DL, 'g'		
+INT 21h			
+MOV AH, 00h		
+INT 21h	
+______________
+*Zad2.*
+
+org 100h		
+
+MOV AH, 09h		
+MOV DX, string	
+INT 21h			
+
+MOV AH, 00h		
+INT 21h			
+
+string db "Gilbert Lesniak $"		
+______________
+*Zad3.*
+
+org 100h
+
+MOV AH, 02h  
+MOV DH, 0    
+MOV DL, 0    
+INT 10h      
+
+MOV AH, 02h  
+MOV DL, 'A'  
+INT 21h      
+
+MOV AH, 00h  
+INT 21h    
+______________
+*Zad4.*
+
+org 100h
+
+MOV AH, 09h
+MOV DX, prompt
+INT 21h
+
+MOV AH, 01h
+INT 21h
+MOV BL, AL 
+
+MOV AH, 02h
+MOV DL, ' '
+INT 21h
+
+MOV AH, 02h
+MOV DL, BL
+INT 21h
+
+MOV AH, 4Ch
+INT 21h
+
+prompt db 'Podaj znak: $'
+________________
+*Zad5.*
+
+org 100h
+
+MOV AH, 0Ch
+MOV AL, 'C'
+MOV BH, 0
+MOV CX, 1
+MOV DH, 12 
+MOV DL, 40 
+INT 10h
+
+MOV AH, 4Ch
+INT 21h
+________________
